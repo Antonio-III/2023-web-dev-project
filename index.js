@@ -51,7 +51,7 @@ document.querySelectorAll(".main-content").forEach(i=>{
     let includeSymbols=includeSymbs.checked;
 
     // password-block. 
-    // inside `options` because I want to update the values in real-time when the user interacts with `options`
+    // inside `options` because I want to update the values in real-time when the user interacts with any of the options
     const inputField=i.querySelector(".password");
     
     const inputFieldColor=inputField.style.backgroundColor;
@@ -73,6 +73,7 @@ document.querySelectorAll(".main-content").forEach(i=>{
         // update the content to be copied to clipboard.
         passwordText=inputField.value;
 
+        // error when 0 boxes checked
         if (passwordText.length===0){
             activeColor = errorColor;
             inputField.value=`At least 1 character option needs to be selected`;
@@ -81,6 +82,15 @@ document.querySelectorAll(".main-content").forEach(i=>{
         else{
             activeColor=inputFieldColor;
         }
+        // ---
+
+        // loading screen animation
+        loadingLine.style.width="100%";
+        
+        setTimeout(()=>{
+            loadingLine.style.width="0";
+        },100);
+        // ---
 
         inputField.style.backgroundColor=activeColor;
     });
@@ -102,6 +112,12 @@ document.querySelectorAll(".main-content").forEach(i=>{
             activeColor=inputFieldColor;
         }
 
+        loadingLine.style.width="100%";
+        
+        setTimeout(()=>{
+            loadingLine.style.width="0";
+        },100);
+
         inputField.style.backgroundColor=activeColor;
     });
     
@@ -121,6 +137,12 @@ document.querySelectorAll(".main-content").forEach(i=>{
         else{
             activeColor=inputFieldColor;
         }
+
+        loadingLine.style.width="100%";
+        
+        setTimeout(()=>{
+            loadingLine.style.width="0";
+        },100);
 
         inputField.style.backgroundColor=activeColor;
     });
@@ -142,6 +164,12 @@ document.querySelectorAll(".main-content").forEach(i=>{
             activeColor=inputFieldColor;
         }
 
+        loadingLine.style.width="100%";
+        
+        setTimeout(()=>{
+            loadingLine.style.width="0";
+        },100);
+
         inputField.style.backgroundColor=activeColor;
     });
 
@@ -161,6 +189,12 @@ document.querySelectorAll(".main-content").forEach(i=>{
         else{
             activeColor=inputFieldColor;
         }
+
+        loadingLine.style.width="100%";
+        
+        setTimeout(()=>{
+            loadingLine.style.width="0";
+        },100);
 
         inputField.style.backgroundColor=activeColor;
     });
