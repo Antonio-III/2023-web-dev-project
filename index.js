@@ -31,7 +31,7 @@ function generatePassword(pwlen,bool_lower,bool_upper,bool_num,bool_sym){
 
 
 // return all `.main-content` elements, and execute the code within for each `.main-content` element.
-document.querySelectorAll(".main-content").forEach(i=>{
+document.querySelectorAll("main").forEach(i=>{
 
     // options
     // password length
@@ -208,8 +208,8 @@ document.querySelectorAll(".main-content").forEach(i=>{
 
     const refreshButton=i.querySelector(".refresh-button");
 
-    const loadingLine=i.querySelector(".loading-line")
-    
+    const loadingLine=i.querySelector(".loading-line");
+   
 
     // on click clipboard 
     copyButton.addEventListener("click",()=>{
@@ -253,6 +253,7 @@ document.querySelectorAll(".main-content").forEach(i=>{
         
         setTimeout(()=>{
             loadingLine.style.width="0";
+    
         },100);
     });
 });

@@ -10,16 +10,16 @@
 </head>
 <body>
     <header>
-        <div class="header-content">
-        <a class="icon" href="./"><img src="Images/key-f.svg"></a>
-        <a href="./" id="rpg"><h2 class="site-name">RPG </h2></a>
-        </div>
+        <a href="./" class="site-header"><img src="Images/key-f.svg" class="site-icon"></a>
+        <a href="./" class="site-header site-name"><h2>RPG </h2></a>
+        <a href="https://github.com/Antonio-III/web-dev-ii-project-23" class="github-icon-container">
+            <img src="Images/github-black.svg" class="github-icon">
+        </a>
     </header>
     <main>
-        <div class="main-content">
-            <h1>Random Password Generator </h1>
+            <h1 class="title">Random Password Generator </h1>
             <div class="password-block">
-                <input type="text" class="password" value="test" readonly>
+                <input type="text" class="password" value="This will only show if you have an error in your JS" readonly>
 
                 <button type="button" class="copy-button">
                     <span class="material-symbols-outlined">
@@ -33,45 +33,48 @@
             
             </div>
             <div class="loading-line-container">
-                <div class="loading-line"></div>
+                <hr class="loading-line"></hr>
             </div>
             <div class="options">
                 <div class="password-len option">
-                    <input type="number" value="12" min="1" max="50" class="password-len-input" id="len" >
-                    <label for="len">
-                        <h2 class="description">Password Length</h2>
+                    <input type="number" value="12" min="1" max="60" class="password-len-input" id="len" >
+                    <label for="len" class="description">
+                        <h2>Password Length</h2>
                     </label>
                 </div>
                 <div class="include-lowercase option">
                     <input type="checkbox" checked class="checkbox include-lower" id="lower">
-                    <label for="lower">
-                        <h2 class="description">Include Lowercase Characters</h2>
+                    <label for="lower" class="description">
+                        <h2>Include Lowercase Characters</h2>
                     </label>
                 </div>
                 <div class="include-uppercase option">
                     <input type="checkbox" checked class="checkbox include-upper" id="upper">
                     <label for="upper" class="description">
-                        <h2 class="description">Include Uppercase Characters</h2>
+                        <h2>Include Uppercase Characters</h2>
                     </label>
                 </div>
                 <div class="include-numbers option">
                     <input type="checkbox" checked class="checkbox include-numbs" id="numbs">
                     <label for="numbs" class="description">
-                        <h2 class="description">Include Numbers</h2>
+                        <h2>Include Numbers</h2>
                     </label>
                 </div>
                 <div class="include-symbols option">
                     <input type="checkbox" checked class="checkbox include-symbs" id="symbs">
-                    <label for="symbs">
-                        <h2 class="description">Include Symbols</h2>
+                    <label for="symbs" class="description">
+                        <h2>Include Symbols</h2>
                     </label>
                 </div>
             </div>
-        </div>
+            <div class="email">
+                <p>antoniomiguelintal125@gmail.com</p>
+            </email>
     </main>
+    
     <footer>
-        <div class="github-container">
-            <a href="https://github.com/Antonio-III/web-dev-ii-project-23"><img src="Images/github.svg" class="github-icon"></a>
+        <div class="github-container-footer">
+            <a href="https://github.com/Antonio-III/web-dev-ii-project-23"><img src="Images/github-white.svg" class="github-icon"></a>
         </div>
         <div class="email">
             <p>antoniomiguelintal125@gmail.com</p>

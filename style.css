@@ -2,212 +2,439 @@
     margin:0;
     
     font-family: 'Poppins', sans-serif;
+    box-sizing:border-box;
 }
+
 body{
-    height:100vh;
     display:flex;
     flex-direction: column;
 
     background-color: rgb(51,52,141);
+
+}
+
+.github-icon{
+    display:block;
+    
+    width:40px;
+    height:40px;
 }
 
 header{
-    min-height:10%;
-    display:flex;
-}
-.header-content{
+
     display:flex;
     align-items:center;
+
+    padding-left:50px;
+    padding-right:80px;
+
+    min-height:10%;
+
+    padding-top:20px;
+
+    >.site-header{
+        color:black;
+
+        text-decoration: none;
+
+        >.site-icon{
+            display:block;
+
+            width:30px;
+            height:30px;
+        }
+    }
+
+    >.site-name{
+        padding-left:10px;
+    }
+    
+
+    .github-icon-container{
+        margin-left:auto; 
+    }
 }
 
-.icon{
-    display:block;
-    width:28px;
-    height:28px;
-    margin-left:50px;
-
-}
-#rpg{
-    color:black;
-
-    text-decoration: none;
-}
-.site-name{
-    margin-left:10px;
-}
 
 main{
-    min-height:70%;
-}
-.main-content{
-    width:100%;
-    height: 100%;
-
     display:flex;
     flex-direction: column;
     
     align-items:center;
-
-    margin-bottom:auto;
-}
-h1{
-    margin-top:20px;
-
-    color:white;
-
-    text-shadow: 0 10px 10px rgba(0, 0, 0, 1);
-}
-.password-block{
-    min-width:40%;
-    min-height:10%;
-
-    margin-top:20px;
-
-    display:flex;
-
-    border-radius: 20px;
-
-    box-shadow: 0 10px 10px 3px rgba(0, 0, 0, .3);
-}
-
-.password{
-
-    border-start-start-radius: 20px;
-    border-end-start-radius: 20px;
-
-    flex-grow:1;
-
-    padding:10px;
-
-    font-size:20px;
-
-    outline:none;
-
-    border: 1px solid rgb(51,52,141);
-}
-
-.copy-button,.refresh-button{
-    background-color: #cccccc;
     
-    outline:none;
-
-    display:flex;
+    >.title{
+        margin-top:20px;
+        
+        text-align:center;
+        
+        color:white;
     
-    align-items: center;
-    justify-content:center;
+        text-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+    }
 
-    cursor:pointer;
-
-    border: 1px solid rgb(51,52,141);
-}
-
-.copy-button:hover,.refresh-button:hover,.password:hover{
-    background-color: #eeeeee;
-
-}
-
-.copy-button{
-    margin-left:auto;
-}
-
-.refresh-button{
-    border-start-end-radius: 20px;
-    border-end-end-radius: 20px;
-}
-
-.loading-line-container{
-    min-width:calc(40% - 25px);
-}
-
-.loading-line{
-    width:0;
-    height:1px;
-
-    background-color: rgb( 35, 246,   9);
-
-    transition:width .1s ease-in-out;
-
-    display:block;
-}
-
-.options{
-    display:flex;
-    flex-flow:row wrap;
-
-    width:40%;
+    >.password-block{
+        min-width:40%;
+      
+        margin-top:20px;
     
-}
-
-.option{
-    max-width:50%;
-    margin-top: 30px;
-    display:flex;
-
-    align-items: center;
+        display:flex;
     
-    flex-grow:1;
+        border-radius: 20px;
     
+        box-shadow: 0 10px 10px 3px rgba(0, 0, 0, .3);
+
+        >.password{
+            /* Border radius at the top/bottom-left */
+            border-start-start-radius: 20px;
+            border-end-start-radius: 20px;
+        
+            flex-grow:1;
+        
+            padding:15px;
+        
+            font-size:20px;
+        
+            outline:none;
+        
+            border: 1px solid rgb(51,52,141);
+        }
+        >.copy-button,.refresh-button{
+            background-color: #cccccc;
+            
+            outline:none;
+        
+            display:flex;
+            
+            align-items: center;
+            justify-content:center;
+        
+            cursor:pointer;
+        
+            border: 1px solid rgb(51,52,141);
+        }
+        >.copy-button{
+            margin-left:auto;
+        }
+        >.refresh-button{
+            border-start-end-radius: 20px;
+            border-end-end-radius: 20px;
+        }
+        >.password:hover,.copy-button:hover,.refresh-button:hover{
+            background-color: #eeeeee;
+        }
+    }
+    >.loading-line-container{
+        min-width:calc(40% - 25px);
+        
+        >.loading-line{
+            width:0;
+            height:1px;
+        
+            background-color: rgb( 35, 246,   9);
+        
+            transition:width .1s ease-in-out;
+        
+            display:block;
+        
+            border:0px;
+        }
+    }
+    >.options{
+        display:flex;
+        flex-flow:row wrap;
     
-}
+        padding: 0 20%;
 
-.password-len-input{
-    max-width:15%;
-   
-    border-radius: 10px;
+        >.option{
+            flex-basis:min-content;
 
-    outline:none;
+            flex-flow:row nowrap;
 
-    padding:5px;
-
-    font-size:16px;
-
-    border: 1px solid rgb(51,52,141);
-}
-
-.password-len-input,.checkbox{
-    box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
-}
-.description{
-    margin-left:10px;
-
-    color:white;
-
-    text-shadow: 0 10px 10px rgba(0, 0, 0, .5);
-}
-
-.checkbox{
-    width:20px;
-    height:20px;
+            margin-top: 30px;
     
-    flex:0 0 auto;
+            display:flex;
+            align-items: center; 
+
+            >.password-len-input{               
+                border-radius: 10px;
+            
+                outline:none;
+            
+                padding:5px;
+            
+                font-size:16px;
+            
+                border: 1px solid rgb(51,52,141);
+            }
+
+            >.checkbox{
+                width:20px;
+                height:20px;
+                
+                flex:0 0 auto;
+            }
+
+            >.password-len-input,.checkbox{
+                box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+            }
+
+            >.description{
+                padding-left:15px;
+            
+                color:white;
+            
+                text-shadow: 0 10px 10px rgba(0, 0, 0, .5);
+            }
+        }
+    }
+
+    .email{
+        margin-top:300px;
+        
+        color:white;
+    
+        text-shadow: 0 10px 5px rgba(0, 0, 0, .5);
+    }
 }
 
 footer{
-    min-height:20%;
+    margin-top:50px;
     background-color: black;
     
     display:flex;
     flex-direction: column;
-}
-.github-container{
-    flex-grow:1;
 
-    padding:20px;
-}
-.github-icon{
-    width:40px;
-    height:40px;
-}
-.email{
-    display:flex;
-    flex-direction:column;
-    color:white;
+    >.github-container-footer{
+        flex-grow:1;
     
-    >p{
-        margin-top:auto;
-        margin-bottom:5px;
+        padding:20px;
+    }
 
+    >.email{
         align-self:center;
+        
+        color:white;
+        
+        >p{
+            margin-top:auto;
+            margin-bottom:5px;
+    
+            
+        }
     }
 }
 
+
+
+@media (min-width:1281px){
+    :root{
+        --basewidth:60%;
+    }
+
+    main{
+        >.password-block{
+            min-width:var(--basewidth);
+        }
+
+        >.loading-line-container {
+            min-width: calc(var(--basewidth) - 25px);
+        }
+
+        >.options{
+            padding: 0 20%;
+
+            flex-flow:row wrap;
+
+            >.option{
+                min-width:50%;
+
+                padding-left:10px;
+            }
+        }
+    }
+
+    footer{
+       display:none;
+    }
+    
+}
+
+@media(min-width:1025px) and (max-width:1280px){
+    :root{
+        --basewidth:50%;
+    }
+
+    header{
+        padding-left:150px;
+        padding-right:160px;
+    }
+    main{
+        .password-block{
+            min-width:var(--basewidth);
+        }
+
+        .loading-line-container {
+            min-width: calc(var(--basewidth) - 25px);
+        }
+
+        .options{
+            padding: 0 25%;
+
+            flex-flow:row wrap;
+
+            >.option{
+                min-width:50%;
+                
+                padding-left:50px;
+            }
+        }
+
+        .email{
+            margin-top:250px;
+        }
+    }
+
+    footer{
+        display:none;
+    }
+}
+
+@media (min-width:801px) and (max-width:1024px){
+    :root{
+        --basewidth:30%;
+    }
+
+    header{
+        justify-content:center;
+        
+        >.site-name{
+            
+        }
+        >.github-icon-container{
+            
+        }
+    }
+    
+    main{
+        .password-block{
+            min-width:var(--basewidth);
+            
+        }
+
+        .loading-line-container {
+            min-width: calc(var(--basewidth) - 25px);
+        }
+
+        .options{
+            padding: 0 35%;
+
+            flex-flow:column nowrap;
+        }
+
+        .email{
+            display:none;
+        }
+    }
+    
+    footer{
+        display:none;
+    }
+}
+
+@media(min-width:481px) and (max-width:800px){
+    :root{
+        --basewidth:80%;
+    }
+
+    header{
+        justify-content:center;
+        
+        >.site-name{
+            display:none;
+        }
+        >.github-icon-container{
+            display:none;
+        }
+    }
+    
+    main{
+        .password-block{
+            min-width:var(--basewidth);
+            
+        }
+
+        .loading-line-container {
+            min-width: calc(var(--basewidth) - 25px);
+        }
+
+        .options{
+            padding: 0 10%;
+            
+            flex-flow:column nowrap;
+        }
+
+        .email{
+            display:none;
+        }
+    }
+    
+    footer{
+        margin-top:100px;
+
+        >.github-container-footer{
+            align-self:center;
+        }
+    }
+}
+
+@media(max-width:480px){
+    :root{
+        --basewidth:90%;
+    }
+
+    header{
+        justify-content:center;
+        
+        >.site-name{
+            display:none;
+        }
+        >.github-icon-container{
+            display:none;
+        }
+    }
+    
+    main{
+        .password-block{
+      
+            >.password{
+                padding: 10px 5px;
+            }
+        }
+
+        .loading-line-container {
+            min-width: calc(var(--basewidth) - 25px);
+        }
+
+        .options{
+            padding: 0 20%;
+            
+            flex-flow:column nowrap;
+        }
+
+        .email{
+            display:none;
+        }
+    }
+    
+    footer{
+        margin-top:100px;
+
+        >.github-container-footer{
+            align-self:center;
+        }
+    }
+
+    .checkbox{
+        margin-left:40px;
+    }
+}
