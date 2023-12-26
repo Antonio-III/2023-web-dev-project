@@ -1,38 +1,43 @@
+/* 
+styling format: 
+    layout  - display, justify-contents, align-items. IN ORDER
+    size    - w/h, marg/padd, box-sizing. IN ORDER
+    text    - font size, line height, color, text-shadow
+    visual  - bg-color, border, border-rad, box-shadow
+    misc    - transition
+*/ 
+     
 *{
     margin:0;
-    
-    font-family: 'Poppins', sans-serif;
-    box-sizing:border-box;
-}
 
+    box-sizing:border-box;
+
+    font-family: 'Poppins', sans-serif;
+}
+    
 body{
     display:flex;
-    flex-direction: column;
-
+    flex-flow: column wrap;
+    
     background-color: rgb(51,52,141);
-
 }
-
+    
 .github-icon{
     display:block;
-    
+
     width:40px;
-    height:40px;
+    height:40px;    
 }
-
+    
 header{
-
     display:flex;
     align-items:center;
 
+    padding-top:20px;
     padding-left:50px;
     padding-right:80px;
 
-    min-height:10%;
-
-    padding-top:20px;
-
-    >.site-header{
+    >a.site-header{
         color:black;
 
         text-decoration: none;
@@ -50,21 +55,19 @@ header{
     }
     
 
-    .github-icon-container{
+    >.github-icon-container{
         margin-left:auto; 
     }
 }
-
-
+    
 main{
     display:flex;
     flex-direction: column;
-    
     align-items:center;
-    
+
+    margin-top:20px;
+
     >.title{
-        margin-top:20px;
-        
         text-align:center;
         
         color:white;
@@ -72,73 +75,76 @@ main{
         text-shadow: 0 10px 10px rgba(0, 0, 0, 1);
     }
 
-    >.password-block{
-        min-width:40%;
-      
-        margin-top:20px;
-    
+    >.password-block{     
         display:flex;
+
+        margin-top:20px;
     
         border-radius: 20px;
     
         box-shadow: 0 10px 10px 3px rgba(0, 0, 0, .3);
-
+    
         >.password{
+            flex-grow:1;
+
+            padding:15px;
+
+            font-size:20px;
+
             /* Border radius at the top/bottom-left */
             border-start-start-radius: 20px;
             border-end-start-radius: 20px;
         
-            flex-grow:1;
-        
-            padding:15px;
-        
-            font-size:20px;
-        
-            outline:none;
-        
             border: 1px solid rgb(51,52,141);
-        }
-        >.copy-button,.refresh-button{
-            background-color: #cccccc;
-            
+
             outline:none;
-        
+        }
+
+        >.copy-button,.refresh-button{
             display:flex;
-            
             align-items: center;
             justify-content:center;
-        
-            cursor:pointer;
-        
+
+            background-color: #cccccc;
+            
             border: 1px solid rgb(51,52,141);
+
+            outline:none;
+
+            cursor:pointer;
         }
+
         >.copy-button{
             margin-left:auto;
         }
+
         >.refresh-button{
             border-start-end-radius: 20px;
             border-end-end-radius: 20px;
         }
+        
         >.password:hover,.copy-button:hover,.refresh-button:hover{
             background-color: #eeeeee;
         }
     }
+
     >.loading-line-container{
         min-width:calc(40% - 25px);
         
         >.loading-line{
-            width:0;
+            display:block;
+
+            width:0px;
             height:1px;
         
             background-color: rgb( 35, 246,   9);
         
-            transition:width .1s ease-in-out;
-        
-            display:block;
-        
             border:0px;
+
+            transition:width .1s ease-in-out;
         }
     }
+
     >.options{
         display:flex;
         flex-flow:row wrap;
@@ -146,32 +152,31 @@ main{
         padding: 0 20%;
 
         >.option{
-            flex-basis:min-content;
+            display:flex;
+            align-items: center; 
 
+            flex-basis:min-content;
             flex-flow:row nowrap;
 
             margin-top: 30px;
     
-            display:flex;
-            align-items: center; 
-
-            >.password-len-input{               
-                border-radius: 10px;
-            
-                outline:none;
-            
+            >.password-len-input{     
                 padding:5px;
-            
+
                 font-size:16px;
             
+                border-radius: 10px;
+
                 border: 1px solid rgb(51,52,141);
+
+                outline:none;
             }
 
             >.checkbox{
+                flex:0 0 auto;
+
                 width:20px;
                 height:20px;
-                
-                flex:0 0 auto;
             }
 
             >.password-len-input,.checkbox{
@@ -188,9 +193,7 @@ main{
         }
     }
 
-    .email{
-        margin-top:300px;
-        
+    >.email{
         color:white;
     
         text-shadow: 0 10px 5px rgba(0, 0, 0, .5);
@@ -198,11 +201,10 @@ main{
 }
 
 footer{
-    margin-top:50px;
-    background-color: black;
-    
     display:flex;
     flex-direction: column;
+
+    background-color: black;
 
     >.github-container-footer{
         flex-grow:1;
@@ -218,13 +220,9 @@ footer{
         >p{
             margin-top:auto;
             margin-bottom:5px;
-    
-            
         }
     }
 }
-
-
 
 @media (min-width:1281px){
     :root{
@@ -241,20 +239,27 @@ footer{
         }
 
         >.options{
-            padding: 0 20%;
-
             flex-flow:row wrap;
 
-            >.option{
-                min-width:50%;
+            margin-top:15px;
 
+            padding: 0 calc((100% - var(--basewidth))/2);
+
+            >.option{
+                /* So we can fit 2 `option` elements per row */
+                min-width:50%;
+                
                 padding-left:10px;
             }
+        }
+
+        >.email{
+            margin-top:200px;
         }
     }
 
     footer{
-       display:none;
+        display:none;
     }
     
 }
@@ -268,19 +273,22 @@ footer{
         padding-left:150px;
         padding-right:160px;
     }
+
     main{
-        .password-block{
+        >.password-block{
             min-width:var(--basewidth);
         }
 
-        .loading-line-container {
+        >.loading-line-container {
             min-width: calc(var(--basewidth) - 25px);
         }
 
-        .options{
-            padding: 0 25%;
-
+        >.options{
             flex-flow:row wrap;
+
+            margin-top:15px;
+
+            padding: 0 calc((100% - var(--basewidth))/2);
 
             >.option{
                 min-width:50%;
@@ -289,7 +297,7 @@ footer{
             }
         }
 
-        .email{
+        >.email{
             margin-top:250px;
         }
     }
@@ -301,38 +309,33 @@ footer{
 
 @media (min-width:801px) and (max-width:1024px){
     :root{
-        --basewidth:30%;
+        --basewidth:60%;
     }
 
     header{
         justify-content:center;
-        
-        >.site-name{
-            
-        }
-        >.github-icon-container{
-            
-        }
     }
     
     main{
-        .password-block{
+        >.password-block{
             min-width:var(--basewidth);
             
         }
 
-        .loading-line-container {
+        >.loading-line-container {
             min-width: calc(var(--basewidth) - 25px);
         }
 
-        .options{
-            padding: 0 35%;
+        >.options{
+            padding: 0 calc((100% - var(--basewidth))/2);
 
-            flex-flow:column nowrap;
+            >.option{
+                min-width:50%;  
+            }
         }
 
-        .email{
-            display:none;
+        >.email{
+            margin-top:150px;
         }
     }
     
@@ -346,40 +349,48 @@ footer{
         --basewidth:80%;
     }
 
+    body{
+        min-height:100svh;
+    }
+
     header{
         justify-content:center;
         
+        padding-left: 50px;
+        padding-right: 50px;
+
         >.site-name{
             display:none;
         }
+
         >.github-icon-container{
             display:none;
         }
     }
     
     main{
-        .password-block{
+        >.password-block{
             min-width:var(--basewidth);
             
         }
 
-        .loading-line-container {
+        >.loading-line-container {
             min-width: calc(var(--basewidth) - 25px);
         }
 
-        .options{
-            padding: 0 10%;
-            
+        >.options{
             flex-flow:column nowrap;
+
+            padding: 0 calc((100% - var(--basewidth))/2);
         }
 
-        .email{
+        >.email{
             display:none;
         }
     }
     
     footer{
-        margin-top:100px;
+        margin-top:auto;
 
         >.github-container-footer{
             align-self:center;
@@ -392,49 +403,70 @@ footer{
         --basewidth:90%;
     }
 
+    body{
+        min-height:100svh;
+    }
+
     header{
         justify-content:center;
-        
+
+        padding-left: 50px;
+        padding-right: 50px;
+
         >.site-name{
             display:none;
         }
+
         >.github-icon-container{
             display:none;
         }
     }
     
     main{
-        .password-block{
-      
+        >.title{
+            font-size:1.6em;
+        }
+
+        >.password-block{
+            min-width: var(--basewidth);
+
             >.password{
-                padding: 10px 5px;
+                
+                padding: 10px 10px;
+
+                font-size: 1em;
             }
         }
 
-        .loading-line-container {
+        >.loading-line-container {
             min-width: calc(var(--basewidth) - 25px);
         }
 
-        .options{
-            padding: 0 20%;
-            
+        >.options{
             flex-flow:column nowrap;
+
+            padding: 0 calc((100% - var(--basewidth))/2);
+
+            .checkbox{
+                margin-left:40px;
+            }
+
+            h2{
+                font-size:1.3em;
+            }
+
         }
 
-        .email{
+        >.email{
             display:none;
         }
     }
     
     footer{
-        margin-top:100px;
+        margin-top:auto;
 
         >.github-container-footer{
             align-self:center;
         }
-    }
-
-    .checkbox{
-        margin-left:40px;
     }
 }
