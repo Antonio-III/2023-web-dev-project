@@ -94,9 +94,7 @@ main{
         >.password{
             flex-grow:1;
 
-            padding:15px;
-
-            font-size:20px;
+            padding:15px 0 15px 15px;
 
             /* Border radius at the top/bottom-left */
             border-start-start-radius: 20px;
@@ -170,7 +168,7 @@ main{
             >.password-len-input{     
                 padding:5px;
 
-                font-size:16px;
+
             
                 border-radius: 10px;
 
@@ -207,6 +205,7 @@ main{
     }
 }
 
+
 footer{
     display:flex;
     flex-direction: column;
@@ -236,6 +235,10 @@ footer{
         --basewidth:60%;
     }
 
+    .password,.password-len-input{
+        font-size:20px;
+    }
+    
     main{
         >.password-block{
             min-width:var(--basewidth);
@@ -257,6 +260,14 @@ footer{
                 min-width:50%;
                 
                 padding-left:10px;
+
+                >.password-len-input{
+                    max-width:50px;
+                }
+
+                >.checkbox{
+                    margin-left:30px;
+                }
             }
         }
 
@@ -273,7 +284,11 @@ footer{
 
 @media(min-width:1025px) and (max-width:1280px){
     :root{
-        --basewidth:50%;
+        --basewidth:60%;
+    }
+
+    .password,.password-len-input{
+        font-size:20px;
     }
 
     header{
@@ -300,7 +315,15 @@ footer{
             >.option{
                 min-width:50%;
                 
-                padding-left:50px;
+                padding-left:30px;
+
+                >.password-len-input{
+                    max-width:45px;
+                }
+
+                >.checkbox{
+                    margin-left:25px;
+                }
             }
         }
 
@@ -317,6 +340,10 @@ footer{
 @media (min-width:801px) and (max-width:1024px){
     :root{
         --basewidth:60%;
+    }
+
+    .password,.password-len-input{
+        font-size:20px;
     }
 
     header{
@@ -338,6 +365,15 @@ footer{
 
             >.option{
                 min-width:50%;  
+                padding-left:20px;
+
+                >.password-len-input{
+                    max-width:40px;
+                }
+
+                >.checkbox{
+                    margin-left:20px;
+                }
             }
         }
 
@@ -354,6 +390,10 @@ footer{
 @media(min-width:481px) and (max-width:800px){
     :root{
         --basewidth:80%;
+    }
+
+    .password,.password-len-input{
+        font-size:16px;
     }
 
     body{
@@ -389,6 +429,16 @@ footer{
             flex-flow:column nowrap;
 
             padding: 0 calc((100% - var(--basewidth))/2);
+
+            .password-len-input{
+                max-width:35px;
+
+                margin-left:50px;
+            }
+            
+            .checkbox{
+                margin-left:65px;
+            }
         }
 
         >.email{
@@ -408,6 +458,10 @@ footer{
 @media(max-width:480px){
     :root{
         --basewidth:90%;
+    }
+
+    .password,.password-len-input{
+        font-size:16px;
     }
 
     body{
@@ -430,18 +484,11 @@ footer{
     }
     
     main{
-        >.title{
-            font-size:1.6em;
-        }
-
         >.password-block{
             min-width: var(--basewidth);
-
+           
             >.password{
-                
-                padding: 10px 10px;
-
-                font-size: 1em;
+                padding: 15px 0px 15px 10px;
             }
         }
 
@@ -454,14 +501,15 @@ footer{
 
             padding: 0 calc((100% - var(--basewidth))/2);
 
+            .password-len-input{
+                max-width:35px;
+
+                margin-left:25px;
+            }
+
             .checkbox{
                 margin-left:40px;
             }
-
-            h2{
-                font-size:1.3em;
-            }
-
         }
 
         >.email{
