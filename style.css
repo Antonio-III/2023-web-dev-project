@@ -159,10 +159,9 @@ main{
         >.option{
             display:flex;
             align-items: center; 
-
-            flex-basis:min-content;
             flex-flow:row nowrap;
-
+            flex-basis:min-content;
+            
             margin-top: 30px;
     
             >.password-len-input{     
@@ -263,7 +262,7 @@ footer{
                 padding-left:10px;
 
                 >.password-len-input{
-                    max-width:var(--maxwidth)
+                    max-width:var(--maxwidth);
                 }
 
                 >.checkbox{
@@ -286,7 +285,7 @@ footer{
 @media(min-width:1025px) and (max-width:1280px){
     :root{
         --basewidth:60%;
-        --maxwidth:50px;
+        --maxwidth:60px;
     }
 
     .password,.password-len-input{
@@ -320,7 +319,7 @@ footer{
                 padding-left:30px;
 
                 >.password-len-input{
-                    max-width:var(--maxwidth)
+                    max-width:var(--maxwidth);
                 }
 
                 >.checkbox{
@@ -342,7 +341,7 @@ footer{
 @media (min-width:801px) and (max-width:1024px){
     :root{
         --basewidth:60%;
-        --maxwidth:50px;
+        --maxwidth:60px;
     }
 
     .password,.password-len-input{
@@ -368,10 +367,11 @@ footer{
 
             >.option{
                 min-width:50%;  
+       
                 padding-left:20px;
 
                 >.password-len-input{
-                    max-width:var(--maxwidth)
+                    max-width:var(--maxwidth);
                 }
 
                 >.checkbox{
