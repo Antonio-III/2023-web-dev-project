@@ -94,7 +94,7 @@ main{
         >.password{
             flex-grow:1;
 
-            padding:15px 0 15px 15px;
+            padding:15px;
 
             /* Border radius at the top/bottom-left */
             border-start-start-radius: 20px;
@@ -491,7 +491,7 @@ footer{
             min-width: var(--basewidth);
            
             >.password{
-                padding: 15px 0px 15px 10px;
+                padding: 15px 10px;
             }
         }
 
