@@ -147,6 +147,9 @@ main{
             background-color: rgb( 35, 246,   9);
         
             border:0px;
+            
+            /* Not noticeable but I'll add it anyway */
+            border-radius: 1px;
 
             transition:width .1s ease-in-out;
         }

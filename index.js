@@ -3,7 +3,7 @@ function generatePassword(pwlen,bool_lower,bool_upper,bool_num,bool_sym){
     const lowercaseChars="abcdefghijklmnopqrstuvwxyz";
     const uppercaseChars="ABCDEFGHIJKLMNOPQRSTUVXXYZ";
     const numberChars="0123456789";
-    const symbolChars="`~!@#$%^&*()-_=+[]\;',./{}|:<>?";
+    const symbolChars="`~!@#$%^&*()-_=+[]\\;',./{}|:<>?\"";
 
     let allowedChars="";
     let password_generated="";
