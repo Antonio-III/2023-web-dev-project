@@ -73,7 +73,6 @@ main{
     align-items:center;
 
     margin-top:50px;
-    margin-bottom: 50px;
     
     >.title{
         text-align:center;
@@ -425,6 +424,8 @@ footer{
     }
     
     main{
+        margin-bottom: 50px;
+        
         >.password-block{
             min-width:var(--basewidth);
             
@@ -493,6 +494,8 @@ footer{
     }
     
     main{
+        margin-bottom: 50px;
+        
         >.password-block{
             min-width: var(--basewidth);
            
