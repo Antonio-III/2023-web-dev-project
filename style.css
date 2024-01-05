@@ -236,7 +236,7 @@ footer{
 
 @media (min-width:1281px){
     :root{
-        --basewidth:60%;
+        --basewidth:50%;
         --maxwidth:60px;
     }
 
