@@ -168,7 +168,7 @@ main{
             flex-flow:row nowrap;
             flex-basis:min-content;
             
-            margin-top: 30px;
+            margin-top: 25px;
     
             >.password-len-input{     
                 padding:5px;
@@ -257,7 +257,7 @@ footer{
         >.options{
             flex-flow:row wrap;
 
-            margin-top:15px;
+            margin-top:10px;
 
             padding: 0 calc((100% - var(--basewidth))/2);
 
