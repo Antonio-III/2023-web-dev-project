@@ -33,12 +33,12 @@ function generatePassword(pwlen,bool_lower,bool_upper,bool_num,bool_sym){
 // return all `.main-content` elements, and execute the code within for each `.main-content` element.
 document.querySelectorAll("main").forEach(i=>{
 
-    // options
+    // options. first because we have to call the function when the website first loads.
     // password length
     const passLenInput=i.querySelector(".password-len-input");
     let passLength=passLenInput.value;
     // include lower
-    const includeLower= i.querySelector(".include-lower");
+    const includeLower=i.querySelector(".include-lower");
     let includeLowercase=includeLower.checked;
     // include upper
     const includeUpper=i.querySelector(".include-upper");
@@ -62,7 +62,7 @@ document.querySelectorAll("main").forEach(i=>{
 
     let passwordText=inputField.value;
 
-    // call function `generatePassword` with default parameters
+    // call `generatePassword` with default parameters when website loads
     inputField.value=generatePassword(passLength,includeLowercase,includeUppercase,includeNumbers,includeSymbols);
 
     // on input passlength
@@ -258,3 +258,44 @@ document.querySelectorAll("main").forEach(i=>{
     });
 });
 
+// adjust the element and the content depending on the width
+function adjust(){
+    const width=window.innerWidth || document.documentElement.clientWidth;
+    const height=window.innerHeight || document.documentElement.clientHeight;
+    const descLen=document.querySelector(".desc_len");
+    const descLow=document.querySelector(".desc_low");
+    const descUpp=document.querySelector(".desc_upp");
+    const descNum=document.querySelector(".desc_num");
+    const descSym=document.querySelector(".desc_sym");
+    
+    function smaller(arg1,arg2,arg3,arg4,arg5){
+        arg1.innerHTML="<h3>Length</h3>";
+        arg2.innerHTML="<h3>Lowercase</h3>";
+        arg3.innerHTML="<h3>Uppercase</h3>";
+        arg4.innerHTML="<h3>Numbers</h3>";
+        arg5.innerHTML="<h3>Symbols</h3>";
+    }
+    function bigger(arg1,arg2,arg3,arg4,arg5){
+        arg1.innerHTML="<h2>Password Length</h2>";
+        arg2.innerHTML="<h2>Include Lowercase Characters</h2>";
+        arg3.innerHTML="<h2>Include Uppercase Characters</h2>";
+        arg4.innerHTML="<h2>Include Numbers</h2>";
+        arg5.innerHTML="<h2>Include Symbols</h2>";
+    }
+
+    if (width<=800){
+        smaller(descLen,descLow,descUpp,descNum,descSym);
+    } else{
+        bigger(descLen,descLow,descUpp,descNum,descSym);
+    }
+
+    if (height>=1000){
+        bigger(descLen,descLow,descUpp,descNum,descSym);
+    }
+
+
+}
+
+// event listener for loading the site, and resizing
+window.addEventListener("load",adjust);
+window.addEventListener("resize",adjust);
