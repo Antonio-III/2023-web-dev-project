@@ -60,11 +60,10 @@ document.querySelectorAll("main").forEach(i=>{
 
     let activeColor=inputFieldColor;
 
-    let passwordText=inputField.value;
-
     // call `generatePassword` with default parameters when website loads
     inputField.value=generatePassword(passLength,includeLowercase,includeUppercase,includeNumbers,includeSymbols);
-
+    
+    let passwordText=inputField.value;
     // on input passlength
     passLenInput.addEventListener("input",()=>{
         passLength=passLenInput.value;
