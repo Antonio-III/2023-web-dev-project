@@ -1,2 +1,2 @@
 # Random Password Generator
-Generate a random password up to 50 characters!
+Generate a random password up to 60 characters!
