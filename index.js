@@ -29,7 +29,6 @@ function generatePassword(pwlen,bool_lower,bool_upper,bool_num,bool_sym){
 
 }
 
-
 // return all `.main-content` elements, and execute the code within for each `.main-content` element.
 document.querySelectorAll("main").forEach(i=>{
 
@@ -62,7 +61,7 @@ document.querySelectorAll("main").forEach(i=>{
 
     // call `generatePassword` with default parameters when website loads
     inputField.value=generatePassword(passLength,includeLowercase,includeUppercase,includeNumbers,includeSymbols);
-    
+
     let passwordText=inputField.value;
     // on input passlength
     passLenInput.addEventListener("input",()=>{
