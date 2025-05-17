@@ -202,12 +202,6 @@ main{
             }
         }
     }
-
-    >email{
-        color:white;
-    
-        text-shadow: 0 10px 5px rgba(0, 0, 0, .5);
-    }
 }
 
 
@@ -221,17 +215,6 @@ footer{
         flex-grow:1;
     
         padding:20px;
-    }
-
-    >email{
-        align-self:center;
-        
-        color:white;
-        
-        >p{
-            margin-top:auto;
-            margin-bottom:5px;
-        }
     }
 }
 
@@ -275,10 +258,6 @@ footer{
                     margin-left:calc(var(--maxwidth) - 20px);
                 }
             }
-        }
-
-        >email{
-            margin-top:200px;
         }
     }
 
@@ -333,10 +312,6 @@ footer{
                 }
             }
         }
-
-        >email{
-            margin-top:250px;
-        }
     }
 
     footer{
@@ -384,10 +359,6 @@ footer{
                     margin-left:calc(var(--maxwidth) - 20px);
                 }
             }
-        }
-
-        >email{
-            margin-top:150px;
         }
     }
     
@@ -450,10 +421,6 @@ footer{
             .checkbox{
                 margin-left:0;
             }
-        }
-
-        >email{
-            display:none;
         }
     }
     
@@ -524,10 +491,6 @@ footer{
             .checkbox{
                 margin-left:0;
             }
-        }
-
-        >email{
-            display:none;
         }
     }
     
